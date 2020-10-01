@@ -6,6 +6,7 @@ public class spellCheckerTest {
         @Test
         public void testCorrectSingleWord () {
             assertEquals("Hello", spellCheckerApp.assess("Hello"));
+            assertEquals("Peggy", spellCheckerApp.assess("Peggy"));
         }
         @Test
         public void testIncorrectSingleWord () {
