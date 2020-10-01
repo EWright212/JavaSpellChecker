@@ -21,4 +21,9 @@ public class spellCheckerTest {
     public void testTwoCorrectWords() {
         assertEquals("Hello Peggy", spellCheckerApp.assess("Hello Peggy"));
     }
+
+    @Test
+    public void testOneCorrectOneIncorrectWord() {
+        assertEquals("~Hello000~ Peggy", spellCheckerApp.assess("Hello000 Peggy"));
+    }
 }
