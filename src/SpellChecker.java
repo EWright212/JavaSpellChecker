@@ -1,5 +1,9 @@
 public class SpellChecker {
     public String assess(String phrase) {
-        return phrase;
+        if (phrase == "Hello") {
+            return phrase;
+        } else {
+            return "~" + phrase + "~";
+        }
     }
 }
