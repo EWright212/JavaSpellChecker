@@ -1,31 +1,26 @@
-import org.apache.commons.lang3.ArrayUtils;
+//import org.apache.commons.lang3.ArrayUtils;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
+//import java.util.HashSet;
 
 
 public class SpellChecker {
     public String assess(String phrase) {
 
-//        String[] dictionary = {"Hello", "Peggy"};
+        String[] dictionary = {"Hello", "Peggy"};
+        String words[] = phrase.split(" ");
+        ArrayList<String> result = new ArrayList<String>();
 
-        String[] dictionary = new String[] {"Hello", "Peggy"};
-        String words[] = phrase.split(", ");
-        Character[] objarrayDictionary = ArrayUtils.toObject(dictionary);
-        Character[] objarrayWords = ArrayUtils.toObject(words);
-        Set<T> setA = new HashSet(Arrays.asList(objarrayA));
-        Set<T> setB = new HashSet(Arrays.asList(objarrayB));
+        for (int i = 0; i < words.length; i++) {
+            if (Arrays.asList(dictionary).contains(words[i])) {
+                result.add(words[i]);
+            } else {
+                result.add("~" + words[i] + "~");
 
-        setA.removeAll(setB);
-
-        Character[] result;
-        result = setA.toArray(result);
-        char[] cresult = ArrayUtils.toPrimitive(result);
-
-        if (Arrays.asList(dictionary).contains(phrase)) {
-            return phrase;
-        } else {
-            return "~" + phrase + "~";
+            }
         }
+        String res = String.join(" ", result);
+        return res;
     }
 }
